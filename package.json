@@ -1,0 +1,26 @@
+{
+  "name": "startonomy",
+  "version": "0.1.0",
+  "description": "A discord-based economy system",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint index.js",
+    "fix": "eslint --fix index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StartonMC/Startonomy.git"
+  },
+  "author": "xAtsuUC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StartonMC/Startonomy/issues"
+  },
+  "homepage": "https://github.com/StartonMC/Startonomy#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  }
+}
