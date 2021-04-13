@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/StartonMC/Startonomy/issues"
   },
-  "homepage": "https://github.com/StartonMC/Startonomy#readme"
+  "homepage": "https://github.com/StartonMC/Startonomy#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
 }
