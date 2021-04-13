@@ -1,0 +1,19 @@
+{
+  "name": "startonomy",
+  "version": "0.1.0",
+  "description": "A discord-based economy system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StartonMC/Startonomy.git"
+  },
+  "author": "xAtsuUC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StartonMC/Startonomy/issues"
+  },
+  "homepage": "https://github.com/StartonMC/Startonomy#readme"
+}
