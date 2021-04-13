@@ -19,7 +19,7 @@ class economyManager {
         return this.data;
     }
     
-    queryDatabase(payload) {
+    _queryDatabase(payload) {
         return new Promise((resolve, reject) => {
             this.connection.getConnection((sqlerr, con) => {
                 con.query(`SELECT * FROM data_${payload.guildID} WHERE id = '${payload.userID}'`, (err, rows) => {
