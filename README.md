@@ -1,6 +1,6 @@
 # Startonomy
 
-[![Node.js CI](https://github.com/StartonMC/Startonomy/actions/workflows/node.js.yml/badge.svg)](https://github.com/StartonMC/Startonomy/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/StartonMC/Startonomy/actions/workflows/node.js.yml/badge.svg)](https://github.com/StartonMC/Startonomy/actions/workflows/node.js.yml) [![Node.js Package](https://github.com/StartonMC/Startonomy/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/StartonMC/Startonomy/actions/workflows/npm-publish.yml)
 
 ### Description
 Hey! this package makes your discord economy-management easyer
