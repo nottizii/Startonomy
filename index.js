@@ -22,7 +22,7 @@ class economyManager {
     queryDatabase(payload) {
         return new Promise((resolve, reject) => {
             this.connection.getConnection((sqlerr, con) => {
-                con.query(`SELECT * FROM data_${payload.guildID} WHERE id = '${payload.userID}'`, (err, rows, fields) => {
+                con.query(`SELECT * FROM data_${payload.guildID} WHERE id = '${payload.userID}'`, (err, rows) => {
                     if(err) reject(err);
                     con.release()
                     resolve(rows[0]);
@@ -37,7 +37,7 @@ class economyManager {
         this.ammount = ammount ?? 10
         this.WoB = WoB ?? 'bank'
         this.connection.getConnection((err, con) => {
-            con.query(`SELECT ${this.WoB} FROM data_${this.guildID} WHERE id  = '${this.userID}'`, (err, rows, fields) => {
+            con.query(`SELECT ${this.WoB} FROM data_${this.guildID} WHERE id  = '${this.userID}'`, (err, rows) => {
                 if(err) throw err;
                 this.oldBal = rows
                 if(this.WoB == 'wallet') this.newBal = Number(this.oldBal[0].wallet) + this.ammount
@@ -56,7 +56,7 @@ class economyManager {
         this.ammount = ammount ?? 10
         this.WoB = WoB ?? 'bank'
         this.connection.getConnection((err, con) => {
-            con.query(`SELECT ${this.WoB} FROM data_${this.guildID} WHERE id  = '${this.userID}'`, (err, rows, fields) => {
+            con.query(`SELECT ${this.WoB} FROM data_${this.guildID} WHERE id  = '${this.userID}'`, (err, rows) => {
                 if(err) throw err;
                 this.oldBal = rows
                 if(this.WoB == 'wallet') this.newBal = Number(this.oldBal[0].wallet) - this.ammount
@@ -78,7 +78,7 @@ class economyManager {
         })
     }
 
-    registerGuild(GuildID) {
+    registerguild(guildID) {
         this.guildID = guildID ?? null
         this.connection.getConnection((err, con) => {
             con.query(`CREATE TABLE IF NOT EXISTS 'data_${this.guildID}' ( 'id' varchar(18) CHARACTER SET utf8 DEFAULT 'No id',  'bank' varchar(9) CHARACTER SET utf8 DEFAULT '0',  'wallet' varchar(9) CHARACTER SET utf8 DEFAULT '0',  'unlimited' varchar(5) CHARACTER SET utf8 DEFAULT 'false') ENGINE=InnoDB DEFAULT CHARSET=latin1`)
