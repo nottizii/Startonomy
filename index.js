@@ -1,4 +1,7 @@
 class economyManager {
+    /**
+     * @param {Database} database object database object to be used to store the data 
+     */
     constructor(database) {
         const mysql = require('mysql')
         this.ip = database.ip
@@ -12,6 +15,12 @@ class economyManager {
             database : this.db
         });
     }
+    /**
+     * 
+     * @param {String} userID User ID to get the data
+     * @param {String} guildID  Guild ID to get the data from
+     * @returns { EconomyData }
+     */
     async getData(userID, guildID) {
         this.guildID = guildID ?? null
         this.userID = userID ?? null
@@ -31,7 +40,13 @@ class economyManager {
             });
         })
     }
-    
+    /**
+     * 
+     * @param {String} userID User ID to add the balance to
+     * @param {String} guildID Guild ID where to add the balance
+     * @param {Number} ammount Ammount to add
+     * @param {String} WoB If the money should be added to wallet or bank
+     */
     async addBalance(userID, guildID, ammount, WoB) {
         this.guildID = guildID ?? null
         this.userID = userID ?? null
@@ -50,7 +65,13 @@ class economyManager {
             con.release()
         })
     }
-    
+    /**
+     * 
+     * @param {String} userID User ID to remove the balance to
+     * @param {String} guildID Guild ID where to remove the balance
+     * @param {Number} ammount Ammount to remove
+     * @param {String} WoB If the money should be removed from wallet or bank
+     */
     async removeBalance(userID, guildID, ammount, WoB) {
         this.guildID = guildID ?? null
         this.userID = userID ?? null
@@ -69,7 +90,11 @@ class economyManager {
             con.release()
         })
     }
-    
+    /**
+     * 
+     * @param {String} userID User to reset the economy
+     * @param {String} guildID Guild to reset the economy
+     */
     async resetEconomy(userID, guildID) {
         this.guildID = guildID ?? null
         this.userID = userID ?? null
@@ -78,7 +103,10 @@ class economyManager {
             con.release();
         })
     }
-
+    /**
+     * 
+     * @param {String} guildID ID of the guild to register
+     */
     registerguild(guildID) {
         this.guildID = guildID ?? null
         this.connection.getConnection((err, con) => {
@@ -86,6 +114,11 @@ class economyManager {
             con.release();
         })
     }
+    /**
+     * 
+     * @param {String} userID ID of the user to register
+     * @param {String} guildID ID of the guild where the user will be registered
+     */
     registerUser(userID, guildID) {
         this.userID = userID ?? null
         this.guildID = guildID ?? null
