@@ -1,6 +1,6 @@
 {
   "name": "startonomy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A discord-based economy system",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "eslint": "^7.24.0",
-    "jsdoc": "^3.6.6"
+    "jsdoc": "^3.6.6",
+    "dotenv": "^8.2.0"
   }
 }
