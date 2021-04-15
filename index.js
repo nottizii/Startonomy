@@ -19,11 +19,12 @@ class economyManager {
      * 
      * @param {String} userID User ID to get the data
      * @param {String} guildID  Guild ID to get the data from
-     * @returns { EconomyData }
+     * @returns { Object }
      */
     async getData(userID, guildID) {
         this.guildID = guildID ?? null
         this.userID = userID ?? null
+        if(typeof this.guildID !== 'string' || this.guildID === 'undefined' || this.guildID === null || typeof this.userID !== 'string' || this.userID === 'undefined' || this.userID === null) throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
         this.data = await this._queryDatabase({guildID: this.guildID, userID: this.userID})
         return this.data;
     }
@@ -48,10 +49,12 @@ class economyManager {
      * @param {String} WoB If the money should be added to wallet or bank
      */
     async addBalance(userID, guildID, ammount, WoB) {
+        if(typeof WoB !== 'string') throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
         this.guildID = guildID ?? null
         this.userID = userID ?? null
         this.ammount = ammount ?? 10
-        this.WoB = WoB ?? 'bank'
+        this.WoB = WoB.toLowerCase() ?? 'bank'
+        if(this.WoB !== 'bank'|| this.WoB !== 'wallet' || NaN(this.ammount)|| typeof this.guildID !== 'string' || this.guildID === 'undefined' || this.guildID === null || typeof this.userID !== 'string' || this.userID === 'undefined' || this.userID === null) throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
         this.connection.getConnection((err, con) => {
             con.query(`SELECT ${this.WoB} FROM data_${this.guildID} WHERE id  = '${this.userID}'`, (err, rows) => {
                 if(err) throw err;
@@ -73,10 +76,12 @@ class economyManager {
      * @param {String} WoB If the money should be removed from wallet or bank
      */
     async removeBalance(userID, guildID, ammount, WoB) {
+        if(typeof WoB !== 'string') throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
         this.guildID = guildID ?? null
         this.userID = userID ?? null
         this.ammount = ammount ?? 10
-        this.WoB = WoB ?? 'bank'
+        this.WoB = WoB.toLowerCase() ?? 'bank'
+        if(this.WoB !== 'bank'|| this.WoB !== 'wallet' || NaN(this.ammount)|| typeof this.guildID !== 'string' || this.guildID === 'undefined' || this.guildID === null || typeof this.userID !== 'string' || this.userID === 'undefined' || this.userID === null) throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
         this.connection.getConnection((err, con) => {
             con.query(`SELECT ${this.WoB} FROM data_${this.guildID} WHERE id  = '${this.userID}'`, (err, rows) => {
                 if(err) throw err;
@@ -98,6 +103,7 @@ class economyManager {
     async resetEconomy(userID, guildID) {
         this.guildID = guildID ?? null
         this.userID = userID ?? null
+        if(typeof this.guildID !== 'string' || this.guildID === 'undefined' || this.guildID === null || typeof this.userID !== 'string' || this.userID === 'undefined' || this.userID === null) throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
         this.connection.getConnection((err, con) => {
             con.query(`UPDATE data_${this.guildID} SET bank = '0', wallet = '0', unlimited = 'false' WHERE id = '${this.userID}'`)
             con.release();
@@ -109,6 +115,7 @@ class economyManager {
      */
     registerguild(guildID) {
         this.guildID = guildID ?? null
+        if(typeof this.guildID !== 'string' || this.guildID === 'undefined' || this.guildID === null) throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
         this.connection.getConnection((err, con) => {
             con.query(`CREATE TABLE IF NOT EXISTS data_${this.guildID} (id varchar(18) CHARACTER SET utf8 DEFAULT 'No id', bank varchar(9) CHARACTER SET utf8 DEFAULT '0',  wallet varchar(9) CHARACTER SET utf8 DEFAULT '0', unlimited varchar(5) CHARACTER SET utf8 DEFAULT 'false') ENGINE=InnoDB DEFAULT CHARSET=latin1`, (err) => { if(err) throw err })
             con.release();
@@ -122,6 +129,7 @@ class economyManager {
     registerUser(userID, guildID) {
         this.userID = userID ?? null
         this.guildID = guildID ?? null
+        if(typeof this.guildID !== 'string' || this.guildID === 'undefined' || this.guildID === null || typeof this.userID !== 'string' || this.userID === 'undefined' || this.userID === null) throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
         this.connection.getConnection((err, con) => {
             if(err) throw err
             con.query(`CREATE TABLE IF NOT EXISTS data_${this.guildID} (id varchar(18) CHARACTER SET utf8 DEFAULT 'No id', bank varchar(9) CHARACTER SET utf8 DEFAULT '0',  wallet varchar(9) CHARACTER SET utf8 DEFAULT '0', unlimited varchar(5) CHARACTER SET utf8 DEFAULT 'false') ENGINE=InnoDB DEFAULT CHARSET=latin1`, (err) => { if(err) throw err })
