@@ -1,9 +1,9 @@
 require('dotenv').config()
-/* eslint-disable */
+/* eslint-disable no-undef, no-unused-vars */
 let test = {
     run: async () => {
 
-        const { economyManager } = require('../index.js')
+        const { economyManager, interactionManager } = require('../index.js')
 
         const db = {
             ip: process.env.IP,
@@ -12,9 +12,10 @@ let test = {
             name: process.env.NAME
         
         }
-        const manager = new economyManager(db)
 
-        manager.unregisterGuild('714444297776398369')
+        const imanager = new interactionManager(db)
+        const e = await imanager.getData('573991320897716224', '791232784898195456')
+        console.log(e)
     }
 }
 
