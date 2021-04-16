@@ -14,8 +14,10 @@ let test = {
         }
         const manager = new economyManager(db)
 
-        manager.registerUser('573991320897716224', '791232784898195456')
+        manager.unregisterGuild('714444297776398369')
     }
 }
 
 test.run()
+
+/// YAY test passed ///
