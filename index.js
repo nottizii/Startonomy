@@ -141,6 +141,30 @@ class economyManager {
             })
         })
     }
+    /**
+     * @param {String} guildID ID of the guild that will be unregistered
+     */
+    unregisterGuild(guildID) {
+        this.guildID = guildID ?? null
+        if(typeof this.guildID !== 'string' || this.guildID === null) throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
+        this.connection.getConnection((err, con) => {
+            if(err) throw err;
+            con.query(`DROP TABLE IF EXISTS data_${this.guildID}`, (err) => { if(err) throw err })
+        })
+    }
+    /**
+     * @param {String} userID ID of the user to unregister
+     * @param {String} guildID ID of the guild where the user should be unregistered
+     */
+    unregisterUser(userID, guildID) {
+        this.userID = userID ?? null
+        this.guildID = guildID ?? null
+        if(typeof this.guildID !== 'string' || this.guildID === 'undefined' || this.guildID === null || typeof this.userID !== 'string' || this.userID === 'undefined' || this.userID === null) throw new TypeError('[ERR_BAD_DATA] Data supplied is invalid, please re-check your function parameters')
+        this.connection.getConnection((err, con) => {
+            if(err) throw err;
+            con.query(`DELETE FROM data_${this.guildID} WHERE id = '${this.userID}'`, (err) => { if(err) throw err })
+        })
+    }
 }
 
 module.exports = { economyManager }

@@ -33,9 +33,14 @@ manager.addRemove('User ID', 'Guild ID', 'Ammount to add', 'Wallet or bank') // 
 manager.getData('User ID', 'Guild ID') // Get data of the economy from a specific user in a guild
 
 manager.resetEconomy('User ID', 'Guild ID') // Resets ALL the data of a player in a guild, but without un-registering it
+
+manager.unregisterUser('User ID', 'Guild ID') // Unregisters a user from a guild (this will delete ALL the asociated data)
+
+manager.unregisterGuild('Guild ID') // Unregisters a guild from the manager (this will delete ALL user AND guild data)
 ```
 
 ### To do list
 - [ ] Add global methods for economyManager
 - [ ] Add documentation for the lib
 - [ ] Add a web with some kind of js docgen
+- [ x ] Add unregister methods
