@@ -4,10 +4,11 @@ class economyManager {
      */
     constructor(database) {
         const mysql = require('mysql')
-        this.ip = database.ip
-        this.user = database.user
-        this.password = database.password
-        this.db = database.name
+        this.test = 'test'
+        this.ip = database.ip ?? '127.0.0.1'
+        this.user = database.user ?? 'me'
+        this.password = database.password ?? 'secret'
+        this.db = database.name ?? 'cool_db'
         this.connection = mysql.createPool({
             host     : this.ip,
             user     : this.user,
