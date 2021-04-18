@@ -3,7 +3,7 @@ require('dotenv').config()
 let test = {
     run: async () => {
 
-        const { economyManager /*, interactionManager */} = require('../index.js')
+        const { economyManager } = require('startonomy')
 
         const db = {
             ip: process.env.IP,
@@ -13,11 +13,9 @@ let test = {
         
         }
 
-        /*
-        const imanager = new interactionManager(db)
-        const e = await imanager.getData('573991320897716224', '791232784898195456')
+        const manager = new economyManager(db)
+        const e = await manager.getData('123432', '793292273159766056')
         console.log(e)
-        */
 
     }
 }
