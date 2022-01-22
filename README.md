@@ -40,6 +40,9 @@ manager.unregisterUser('User ID', 'Guild ID') // Unregisters a user from a guild
 manager.unregisterGuild('Guild ID') // Unregisters a guild from the manager (this will delete ALL user AND guild data)
 ```
 
+### Documentation
+For extended info, examples, values, please refer to [Our Documentation](https://startonmc.github.io/Startonomy/startonomy/0.1.3/)
+
 ### To do list
 - [ ] Add global methods for economyManager
 - [ ] Add documentation for the lib
