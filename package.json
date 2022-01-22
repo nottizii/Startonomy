@@ -4,9 +4,10 @@
   "description": "A discord-based economy system",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js",
-    "fix": "eslint --fix index.js",
-    "doc": "jsdoc index.js"
+    "preinstall": "npm i typescript",
+    "test": "eslint --fix compiled/ && eslint compiled/",
+    "fix": "eslint --fix compiled/",
+    "doc": "jsdoc -c \"./jsdoc.json\""
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,11 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "@types/mysql": "^2.15.20",
+    "@types/node": "^17.0.10",
+    "clean-jsdoc-theme": "^3.3.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.24.0",
-    "jsdoc": "^3.6.6",
-    "dotenv": "^8.2.0"
+    "jsdoc": "^3.6.6"
   }
 }

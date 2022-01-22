@@ -16,10 +16,11 @@ Here is a short example of how to use this package :)
 const { economyManager } = require('startonomy')
 
 const manager = new economyManager({
-    ip: '127.0.0.1', // your database IP
+    host: '127.0.0.1', // your database IP
     user: 'me', // your database user
     password: 'StartonomyIsCool', // your database password
-    name: 'a_database_name' // your database name
+    database: 'a_database_name', // your database name
+    port: 
 })
 
 manager.registerGuild('12345') // register your guild to the database, you need a guild id as parameter
@@ -43,4 +44,4 @@ manager.unregisterGuild('Guild ID') // Unregisters a guild from the manager (thi
 - [ ] Add global methods for economyManager
 - [ ] Add documentation for the lib
 - [ ] Add a web with some kind of js docgen
-- [ x ] Add unregister methods
+- [x] Add unregister methods
