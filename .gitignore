@@ -107,5 +107,5 @@ dist
 # Notes
 *.note.txt
 
-# JSDoc output
-out/
+# My PRIVATE testings
+*.atsutest/
