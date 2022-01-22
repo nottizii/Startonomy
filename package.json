@@ -4,9 +4,13 @@
   "description": "A discord-based economy system",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js",
-    "fix": "eslint --fix index.js",
-    "doc": "jsdoc index.js"
+    "preinstall": "npm i typescript",
+    "prepublishOnly": "npm run fix",
+    "install": "npm run build",
+    "test": "eslint --fix compiled/ && eslint compiled/",
+    "fix": "eslint --fix compiled/",
+    "doc": "jsdoc -c \"./jsdoc.json\"",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
