@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npm i typescript",
-    "test": "eslint index.js",
-    "fix": "eslint --fix index.js",
+    "test": "eslint --fix compiled/ && eslint compiled/",
+    "fix": "eslint --fix compiled/",
     "doc": "jsdoc -c \"./jsdoc.json\""
   },
   "repository": {
