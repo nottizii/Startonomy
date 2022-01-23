@@ -1,8 +1,8 @@
 {
   "name": "startonomy",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "A discord-based economy system",
-  "main": "index.js",
+  "main": "compiled/index.js",
   "scripts": {
     "preinstall": "npm i typescript",
     "prepublishOnly": "npm run fix",
