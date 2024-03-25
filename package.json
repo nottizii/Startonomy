@@ -1,6 +1,6 @@
 {
   "name": "@xatsuuc/startonomy",
-  "version": "2.0.0-Delta",
+  "version": "2.0.0-Epsilon",
   "description": "A discord-based economy system",
   "main": "compiled/index.js",
   "repository": "https://github.com/xAtsuUC/Startonomy.git",
@@ -10,7 +10,7 @@
   "dependencies": {
     "mysql": "^2.18.1"
   },
-  "types": "compiled/index.d.ts",
+  "types": "compiled/types/index.d.ts",
   "files": [
     "src",
     "README.md",
