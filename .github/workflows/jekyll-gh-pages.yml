@@ -35,7 +35,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       - run: npm i typedoc
-      - run: npm run doc
+      - run: npm run docs
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
