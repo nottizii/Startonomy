@@ -33,6 +33,10 @@
   },
   "scripts": {
     "prepublishOnly": "tsc",
-    "docs": "typedoc"
+    "docs": "typedoc",
+    "test-js": "eslint --fix compiled/ && eslint compiled/",
+    "fix-js": "eslint --fix compiled/",
+    "test": "eslint src/",
+    "fix": "eslint --fix src/"
   }
 }
