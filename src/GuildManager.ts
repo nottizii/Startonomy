@@ -1,6 +1,6 @@
 import { Pool, ConnectionConfig } from "mysql"
 import { EventEmitter } from "node:events"
-import { Util } from "./util"
+import { Util } from "./Util"
 
 /**
  * Guild Manager
