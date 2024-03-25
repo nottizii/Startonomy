@@ -32,6 +32,7 @@
     "access": "public"
   },
   "scripts": {
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "tsc",
+    "docs": "typedoc"
   }
 }
