@@ -1,0 +1,14 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": ["./src/"],
+    "entryPointStrategy": "expand",
+    "out": "docs",
+    "plugin": ["typedoc-material-theme"],
+    "themeColor": "#E78895",
+    "navigationLinks": {
+        "GitHub": "https://github.com/xAtsuUC/Startonomy"
+    },
+    "exclude": [
+        "./src/index.ts"
+    ]
+}

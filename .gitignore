@@ -1,5 +1,10 @@
-# Logs
+# Custom shit
 *.gig.*
+docs/
+doc/
+compiled
+
+# Logs
 logs
 *.log
 npm-debug.log*

@@ -1,0 +1,21 @@
+{
+  "name": "startonomy",
+  "version": "2.0.0",
+  "description": "A discord-based economy system",
+  "main": "index.js",
+  "repository": "https://github.com/xAtsuUC/Startonomy.git",
+  "author": "Tiziano Fioretti <tiziafioretti@gmail.com>",
+  "license": "CC BY-SA 4.0",
+  "private": false,
+  "dependencies": {
+    "@types/mysql": "^2.15.26",
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "mysql": "^2.18.1",
+    "typedoc": "^0.25.12",
+    "typedoc-material-theme": "^1.0.2",
+    "typescript": "^5.4.3"
+  }
+}
