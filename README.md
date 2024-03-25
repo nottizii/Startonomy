@@ -45,3 +45,5 @@ For extended info, examples, values, please refer to [Our Documentation](https:/
 
 #### For MongoDB Users:
 I'm simultaneously working on a mongodb package for this lib, but as I'm unexperienced with it, it might take some time.
+
+[Startonomy](https://github.com/xAtsuUC/Startonomy) by [Tiziano Fioretti](https://github.com/xAtsuUC/) is licensed under [CC BY-SA 4.0]()

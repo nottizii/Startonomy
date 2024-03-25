@@ -1,4 +1,4 @@
-import { GuildManager } from "./GuildManager"
-import { Util } from "./Util"
+import GuildManager from "./GuildManager"
+import Util from "./Util"
 
-module.exports = { GuildManager, Util }
+export { GuildManager, Util }

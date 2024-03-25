@@ -1,6 +1,6 @@
 import { Pool, ConnectionConfig } from "mysql"
 import { EventEmitter } from "node:events"
-import { Util } from "./Util"
+import Util from "./Util"
 
 /**
  * Guild Manager
@@ -23,6 +23,10 @@ class GuildManager extends EventEmitter {
         this.database = database
         this.util = new Util()
     }
+
+    public test() {
+        console.log("Test")
+    }
 }
 
-export { GuildManager }
+export default GuildManager

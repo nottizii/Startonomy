@@ -6,7 +6,7 @@ import { Pool } from "mysql";
  * @constructor
  * @hidden
  */
-export class Util {
+export default class Util {
     constructor() {}
 
     /**

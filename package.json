@@ -12,9 +12,10 @@
   },
   "types": "compiled/types/index.d.ts",
   "files": [
-    "src",
+    "compiled",
     "README.md",
-    "tsconfig.json"
+    "package.json",
+    "LICENSE.md"
   ],
   "devDependencies": {
     "@types/mysql": "^2.15.26",
@@ -31,8 +32,6 @@
     "access": "public"
   },
   "scripts": {
-    "preinstall": "npm i typescript",
-    "install": "tsc",
-    "postinstall": "npm uninstall typescript"
+    "prepublishOnly": "tsc"
   }
 }
