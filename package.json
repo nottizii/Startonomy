@@ -1,20 +1,20 @@
 {
   "name": "@xatsuuc/startonomy",
-  "version": "2.0.0-Beta",
+  "version": "2.0.0-Gamma",
   "description": "A discord-based economy system",
   "main": "compiled/index.js",
   "repository": "https://github.com/xAtsuUC/Startonomy.git",
   "author": "Tiziano Fioretti <tiziafioretti@gmail.com>",
   "license": "CC BY-SA 4.0",
-  "files": [
-    "compiled/",
-    "README.md",
-    "package.json"
-  ],
   "private": false,
   "dependencies": {
     "mysql": "^2.18.1"
   },
+  "files": [
+    "src",
+    "README.md",
+    "tsconfig.json"
+  ],
   "devDependencies": {
     "@types/mysql": "^2.15.26",
     "@types/node": "^20.11.30",
@@ -28,5 +28,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
+  },
+  "scripts": {
+    "preinstall": "npm i typescript",
+    "install": "tsc",
+    "postinstall": "npm uninstall typescript"
   }
 }
