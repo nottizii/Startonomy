@@ -16,14 +16,14 @@ export class Util {
      * @returns {Promise<any>} The result of the query
      * I still do not understand why or how this works, but it does (kinda). I will have to look into this more.
      */
-    public _queryDatabase(connection: Pool, query: string):Promise<any> {
+    public _queryDatabase(connection: Pool, query: string):Promise<unknown> {
         return new Promise((resolve, reject) => {
             connection.getConnection((sqlerr, con) => {
                 if (sqlerr) throw sqlerr
                 con.query(query, (err, rows) => {
                     if (err) reject(err);
                     con.release()
-                    resolve(rows[0]);
+                    resolve(rows);
                 })
             });
         })
