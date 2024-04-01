@@ -1,3 +1,4 @@
+// balta tqm
 import { Pool } from "mysql";
 
 /**
